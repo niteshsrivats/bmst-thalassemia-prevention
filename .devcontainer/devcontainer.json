@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Node.js & TypeScript",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "files.autoSave": "onFocusChange"
+      },
+      "extensions": [
+        // Code Formatting & Quality
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        // TypeScript/JavaScript Tools
+        "YoavBls.pretty-ts-errors",
+        "WallabyJs.console-ninja",
+        // Web Development
+        "bradlc.vscode-tailwindcss",
+        "Zignd.html-css-class-completion",
+        "jock.svg",
+        // Development Tools
+        "ms-azuretools.vscode-docker",
+        "arcanis.vscode-zipfs",
+        // Git Tools
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "mounts": [
+    "type=bind,source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,readonly"
+  ],
+  "postCreateCommand": "git config --global --add safe.directory /workspaces/*"
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Configure tool-specific properties.
+  // "customizations": {},
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}

@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:@tanstack/query/recommended"
+  ],
+  "rules": {
+    "@tanstack/query/exhaustive-deps": "error"
+  }
+}
