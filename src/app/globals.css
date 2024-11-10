@@ -3,8 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: 165, 100%, 21%;
+  --secondary: 158, 29%, 31%;
+  --tertiary: 248, 38%, 50%;
+
+  --on-primary: 0, 0%, 100%;
+  --on-secondary: 0, 0%, 100%;
+  --on-tertiary: 0, 0%, 100%;
+
+  --surface-1: 0, 0%, 100%;
+  --surface-2: 137, 26%, 95%;
+  --surface-3: 129, 19%, 93%;
+  --surface-4: 129, 14%, 90%;
+  --surface-5: 137, 11%, 88%;
+
+  --on-surface: 154, 14%, 10%;
+  --on-surface-variant: 150, 10%, 26%;
+  --outline: 150, 6%, 45%;
+  --outline-variant: 148, 12%, 76%;
+
+  --error: 0, 75%, 42%;
+  --on-error: 0, 0%, 100%;
+  --error-container: 6, 100%, 92%;
+  --on-error-container: 356, 100%, 29%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +36,101 @@
 }
 
 @layer base {
-  body {
-    @apply bg-background text-foreground antialiased;
+
+}
+
+@layer utilities {
+  /*Display Large - Roboto 57/64 . -0.25*/
+  .display-large {
+    font-size: 3.56rem;
+    line-height: 4rem;
+    letter-spacing: -0.25px;
+  }
+  /*Display Medium - Roboto 45/52 . 0*/
+  .display-medium {
+    font-size: 2.81rem;
+    line-height: 3.25rem;
+  }
+  /*Display Small - Roboto 36/44 . 0 */
+  .display-small {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+
+  /*Headline Large - Roboto 32/40 . 0*/
+  .headline-large {
+      font-size: 2rem;
+      line-height: 2.5rem;
+  }
+  /*Headline Medium - Roboto 28/36 . 0*/
+  .headline-medium {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+  /*Headline Small - Roboto 24/32 . 0*/
+  .headline-small {
+      font-size: 1.5rem;
+      line-height: 2rem;
+  }
+
+  /*Title Large - Roboto Regular 22/28 . 0*/
+  .title-large {
+      font-size: 1.375rem;
+      line-height: 1.75rem;
+  }
+  /*Title Medium - Roboto Medium 16/24 . +0.15*/
+  .title-medium {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.15px;
+      font-weight: 500;
+  }
+  /*Title Small - Roboto Medium 14/20 . +0.1*/
+  .title-small {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.1px;
+      font-weight: 500;
+  }
+
+  /*Label Large - Roboto Medium 14/20 . +0.1*/
+  .label-large {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.1px;
+      font-weight: 500;
+  }
+  /*Label Medium - Roboto Medium 12/16 . +0.5*/
+  .label-medium {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+  }
+  /*Label Small - Roboto Medium 11/16 . +0.5*/
+  .label-small {
+      font-size: 0.6875rem;
+      line-height: 1rem;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+  }
+
+  /*Body Large - Roboto 16/24 . +0.5 */
+  .body-large {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.5px;
+  }
+  /*Body Medium - Roboto 14/20 . +0.25*/
+  .body-medium {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.25px;
+  }
+  /*Body Small - Roboto 12/16 . +0.4*/
+  .body-small {
+      font-size: 0.75rem;
+      line-height: 1rem;
+      letter-spacing: 0.4px;
   }
 }
