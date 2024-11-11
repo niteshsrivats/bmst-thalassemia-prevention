@@ -38,15 +38,21 @@ const CampaignsPage: NextPage = () => {
       </main>
 
       <footer className={'flex h-[76px] w-full items-center justify-around border-t border-outline-variant'}>
-        <Button className={'body-small flex flex-col items-center space-y-2 rounded-[50%] p-0 text-on-surface'}>
+        <Button
+          className={'body-small flex flex-col items-center space-y-2 rounded-[50%] text-on-surface hover:text-primary'}
+        >
           <FlagSvg className={'h-6 w-6'} />
           Campaigns
         </Button>
-        <Button className={'body-small flex flex-col items-center space-y-2 rounded-[50%] text-on-surface'}>
+        <Button
+          className={'body-small flex flex-col items-center space-y-2 rounded-[50%] text-on-surface hover:text-primary'}
+        >
           <PatientSvg className={'h-6 w-6'} />
           Patients
         </Button>
-        <Button className={'body-small flex flex-col items-center space-y-2 rounded-[50%] text-on-surface'}>
+        <Button
+          className={'body-small flex flex-col items-center space-y-2 rounded-[50%] text-on-surface hover:text-primary'}
+        >
           <DonationsSvg className={'h-6 w-6'} />
           Donations
         </Button>

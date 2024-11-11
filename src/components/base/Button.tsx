@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
-import { ButtonProps } from '@mui/base';
-import { Button as BaseButton } from '@mui/base';
-import clsx from 'clsx';
+import { Button as BaseButton, ButtonProps } from '@mui/base';
+import { cn } from '~/lib/utils';
 
 type Props = ButtonProps & {
   variant?: 'text' | 'contained' | 'outlined';
@@ -9,7 +8,7 @@ type Props = ButtonProps & {
 };
 
 export const Button: FC<PropsWithChildren<Props>> = ({ children, variant = 'text', color = 'primary', ...props }) => {
-  const className = clsx(
+  const className = cn(
     'py-2.5 px-6',
     {
       'hover:bg-primary/10 active:bg-primary/20': color === 'primary',
