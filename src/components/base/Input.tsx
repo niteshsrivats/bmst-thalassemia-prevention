@@ -9,7 +9,7 @@ export const Input: FC<InputProps> = (props) => {
         input: {
           ...props.slotProps?.input,
           className: cn(
-            'body-large rounded-[32px] border-none px-4 py-3 text-on-surface focus:bg-surface-5 w-full outline active:outline-none outline-outline-variant',
+            'body-large rounded-[32px] border-none px-4 py-3 text-on-surface w-full outline outline-[0.5px] outline-outline-variant focus:outline-primary',
           ),
         },
       }}
