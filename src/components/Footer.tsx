@@ -19,7 +19,7 @@ const Footer: FC = () => {
     <>
       <footer
         className={
-          'absolute bottom-0 flex h-[76px] w-full items-center justify-around border-t border-outline-variant bg-white'
+          'sticky bottom-0 flex h-[76px] w-full items-center justify-around border-t border-outline-variant bg-white'
         }
       >
         <Link passHref href={'/campaigns'}>

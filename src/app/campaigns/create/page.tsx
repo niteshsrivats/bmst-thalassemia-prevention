@@ -35,8 +35,8 @@ const CreateCampaign: NextPage = () => {
             <Typography type={'label'} size={'medium'}>
               Key Contacts
             </Typography>
-            {/* TODO needs plus SVG */}
             <Button className="focus:bg-transparent active:bg-transparent">Add</Button>
+            {/* TODO needs + SVG */}
           </div>
           <div>
             <div className="flex flex-col gap-y-1.5">

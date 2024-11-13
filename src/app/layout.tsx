@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { Providers } from '~/providers/Providers';
-import './globals.css';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
+import { Providers } from '~/providers/Providers';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'BMST Thalassemia prevention',
@@ -16,11 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="h-dvh overscroll-none">
         <Header />
-        <div className="h-16 w-full" />
         <Providers>
-          <main className="px-5">{children}</main>
+          {/* TODO not sure if there's a better way to do this */}
+          <main className="h-[calc(100%-64px-76px)] px-5">{children}</main>
         </Providers>
         <Footer />
       </body>
