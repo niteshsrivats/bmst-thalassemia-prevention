@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="h-dvh overscroll-none">
         <Header />
         <Providers>
-          {/* TODO not sure if there's a better way to do this */}
+          {/* TODO not sure if there's a better way set height of content window */}
           <main className="h-[calc(100%-64px-76px)] px-5">{children}</main>
         </Providers>
         <Footer />

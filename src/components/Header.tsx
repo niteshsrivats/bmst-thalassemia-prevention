@@ -14,39 +14,19 @@ const Header: FC = () => {
 
   console.log(routeList);
 
-  if (routeList.length > 2) {
-    if (routeList[routeList.length - 1] === 'create') {
+  const renderHeader = () => {
+    if (routeList.length > 2) {
+      if (routeList[routeList.length - 1] === 'create') {
+        return <CreateHeader page={''} cancelAction={() => router.back()} />;
+      } else {
+        // view header
+      }
     } else {
-      // view header
+      return <MainHeader currentPage={routeList[1]} />;
     }
-  } else {
-    // default header
-  }
+  };
 
-  return (
-    <header className={'sticky top-0 flex h-16 w-full items-center bg-white px-5'}>
-      {routeList[routeList.length - 1] === 'create' ? (
-        <CreateHeader page={''} cancelAction={() => router.back()} />
-      ) : (
-        <>
-          <Typography type={'title'} size={'large'} className="font-semibold text-primary">
-            {/* TODO needs capitalize instead of uppercase, maybe lodash? */}
-            {routeList[1].toUpperCase()}
-          </Typography>
-          <div className={'ml-auto flex space-x-2'}>
-            <Link passHref href={`/campaigns/create`}>
-              <IconButton>+</IconButton>
-            </Link>
-            <div
-              className={'flex h-8 w-8 items-center justify-center rounded-full bg-surface-5 font-bold text-on-surface'}
-            >
-              P
-            </div>
-          </div>
-        </>
-      )}
-    </header>
-  );
+  return <header className={'sticky top-0 flex h-16 w-full items-center bg-white px-5'}>{renderHeader()}</header>;
 };
 
 export default Header;
@@ -65,5 +45,24 @@ const CreateHeader: FC<{ page: string; cancelAction: () => void }> = ({ page, ca
         </Button>
       </div>
     </div>
+  );
+};
+
+const MainHeader: FC<{ currentPage: string }> = ({ currentPage }) => {
+  return (
+    <>
+      <Typography type={'title'} size={'large'} className="font-semibold text-primary">
+        {/* TODO needs capitalize instead of uppercase, maybe lodash? */}
+        {currentPage.toUpperCase()}
+      </Typography>
+      <div className={'ml-auto flex space-x-2'}>
+        <Link passHref href={`/${currentPage}/create`}>
+          <IconButton className="text-primary">+</IconButton>
+        </Link>
+        <div className={'flex h-8 w-8 items-center justify-center rounded-full bg-surface-5 font-bold text-on-surface'}>
+          P
+        </div>
+      </div>
+    </>
   );
 };
