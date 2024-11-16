@@ -20,7 +20,7 @@ export default function RootLayout({
         <Header />
         <Providers>
           {/* TODO not sure if there's a better way set height of content window */}
-          <main className="h-[calc(100%-64px-76px)] px-5">{children}</main>
+          <main className="max-h-[calc(100%-64px-76px)] overflow-auto px-5 py-2">{children}</main>
         </Providers>
         <Footer />
       </body>
